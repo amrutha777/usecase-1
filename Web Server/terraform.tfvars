@@ -1,0 +1,5 @@
+web-server-name = "web-server-vm"
+machine-type = "e2-medium"
+zone = "us-central1-a"
+web-server-tag = "web"
+machine-image = "debian-cloud/debian-10"
