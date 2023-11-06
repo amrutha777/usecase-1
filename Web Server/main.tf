@@ -13,7 +13,7 @@ resource "google_compute_instance" "web-server" {
   }
 
   network_interface {
-    network = "default" 
+    network = var.vpc-name
     access_config {
       
     } 

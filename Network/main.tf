@@ -68,11 +68,11 @@ name        = var.app-firewall-name
 resource "google_compute_firewall" "db-firewall" {
   name        = var.db-firewall-name
   network     = var.vpc-name
-  target_tags = [var.db-firewall-tag]  # You'll need to assign this tag to your database server VM
+  target_tags = [var.db-firewall-tag]  
 
   allow {
     protocol = "tcp"
-    ports    = ["3306"]  # Replace with your database port (e.g., MySQL)
+    ports    = ["3306"]  
   }
 
   source_ranges = [var.app-vm-internal-ip]

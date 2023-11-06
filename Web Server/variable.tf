@@ -4,7 +4,7 @@ variable "web-server-name" {
 }
 variable "machine-type" {
   type = string
-  description = "machine type"
+  description = "specifying machine type"
 }
 variable "zone" {
   type = string
@@ -18,6 +18,7 @@ variable "machine-image" {
   type = string
   description = "specifying image"
 }
-variable "" {
-  
+variable "vpc-name" {
+  type = string
+  description = "specifying vpc name"
 }
