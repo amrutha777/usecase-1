@@ -8,5 +8,5 @@ terraform {
 }
 
 provider "google" {
-  # Configuration options
+  project     = "blissful-fiber-397508"
 }

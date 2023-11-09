@@ -36,45 +36,41 @@ resource "google_compute_subnetwork" "sample-subnet3" {
 
 resource "google_compute_firewall" "web-firewall" {
   name    = var.web-firewall-name
-  network = var.vpc-name 
+  network =  google_compute_network.sample-vpc.id
+  target_tags   = [var.web-firewall-tag] 
+  source_ranges = ["0.0.0.0/0"] 
 
   allow {
     protocol = "all"
-  }
+  } 
 
-  source_ranges = ["0.0.0.0/0"]  
-  target_tags   = [var.web-firewall-tag] 
 }
 
 # creating a firewall for app server
 
 resource "google_compute_firewall" "app-firewall" {
-name        = var.app-firewall-name
-  network     = var.vpc-name
-  
+  name        = var.app-firewall-name
+  network     = google_compute_network.sample-vpc.id
+  source_tags = [var.web-firewall-tag]
+  target_tags = [var.app-firewall-tag] 
 
   deny {
     protocol = "all"
   }
 
-  destination_ranges = ["0.0.0.0/0"]
-
-  source_ranges = [var.web_vm_internal_ip]
-  target_tags = [var.app-firewall-tag]
 }
 
 # creating a firewall for db server
 
 resource "google_compute_firewall" "db-firewall" {
   name        = var.db-firewall-name
-  network     = var.vpc-name
+  network     = google_compute_network.sample-vpc.id
+  source_tags = [var.app-firewall-tag]
   target_tags = [var.db-firewall-tag]  
 
-  allow {
-    protocol = "tcp"
-    ports    = ["3306"]  
+  deny {
+    protocol = "all"
   }
 
-  source_ranges = [var.app-vm-internal-ip]
 }
   

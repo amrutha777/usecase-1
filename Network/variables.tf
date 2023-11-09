@@ -54,10 +54,6 @@ variable "app-firewall-tag" {
   type = string
   description = "tag for app server"
 }
-variable "web_vm_internal_ip" {
-  type = string
-  description = "internal ip of web vm"
-}
 variable "db-firewall-name" {
   type = string
   description = "firewall name for db server"
@@ -65,8 +61,4 @@ variable "db-firewall-name" {
 variable "db-firewall-tag" {
   type = string
   description = "tag for db server"
-}
-variable "app-vm-internal-ip" {
-  type = string
-  description = "internal ip of app vm"
 }

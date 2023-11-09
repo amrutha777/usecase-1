@@ -1,0 +1,30 @@
+# mysql installation in vm 
+
+https://www.digitalocean.com/community/tutorials/how-to-install-the-latest-mysql-on-debian-10
+
+#Step 1 — Adding the MySQL Software Repository
+
+sudo apt update
+sudo apt install gnupg
+cd /tmp
+wget https://dev.mysql.com/get/mysql-apt-config_0.8.22-1_all.deb
+sudo dpkg -i mysql-apt-config*
+sudo apt update
+
+
+#Step 2 — Installing MySQL
+
+sudo apt install mysql-server -y
+sudo systemctl status mysql
+
+
+#Step 3 — Securing MySQL
+
+mysql_secure_installation
+
+
+#Step 4 – Testing MySQL
+
+mysqladmin -u root -p version
+
+

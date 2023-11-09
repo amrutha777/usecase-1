@@ -1,0 +1,19 @@
+module "Network" {
+  source = "./Network"
+  vpc-name = var.vpc_name
+  web-subnet-name = var.web_subnet_name
+  ip-range-for-web = var.ip_range_for_web
+  subnet-region-for-web = var.subnet_region_for_web
+  app-subnet-name = var.app_subnet_name
+  ip-range-for-app = var.ip-range_for_app
+  subnet-region-for-app = var.subnet_region_for_app
+  db-subnet-name = var.db_subnet_name
+  ip-range-for-db = var.ip_range_for_db
+  subnet-region-for-db = var.subnet_region_for_db
+  web-firewall-name = var.web_firewall_name
+  web-firewall-tag = var.web_firewall_tag
+  app-firewall-name = var.app_firewall_name
+  app-firewall-tag = var.app_firewall_tag
+  db-firewall-name = var.db_firewall_name
+  db-firewall-tag = var.db_firewall_tag
+}
