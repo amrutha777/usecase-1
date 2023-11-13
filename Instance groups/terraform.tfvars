@@ -1,0 +1,6 @@
+web-instance-group-name = "web-instance-group"
+web-instance-group-zone = "us-central1-a"
+app-instance-group-name = "app-instance-group"
+app-instance-group-zone = "asia-east1-b"
+db-instance-group-name = "db-instance-group"
+db-instance-group-zone = "asia-east2-b"

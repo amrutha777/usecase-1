@@ -13,6 +13,7 @@ resource "google_compute_instance" "db-server" {
   }
 
   network_interface {
-    network = var.vpc-name
+    network = google_compute_network.sample-vpc.name
+    subnetwork = google_compute_subnetwork.sample-subnet3.name
   }
 }

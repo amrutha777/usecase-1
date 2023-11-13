@@ -1,3 +1,7 @@
+/*****************************
+   Network Module Variables
+*****************************/
+
 variable "vpc_name" {
   type = string
   description = "name of the vpc"
@@ -61,4 +65,149 @@ variable "db_firewall_name" {
 variable "db_firewall_tag" {
   type = string
   description = "tag for the db server"
+}
+
+/*******************************
+   Web Server Module Variables
+*******************************/
+
+variable "web_server_name" {
+  type = string
+  description = "name of the web server"
+}
+variable "web_server_machine_type" {
+  type = string
+  description = "machine type of web server"
+}
+variable "web_server_zone" {
+  type = string
+  description = "zone of the web server"
+}
+variable "web_server_tag" {
+  type = string
+  description = "tags of the web server"
+}
+variable "web_server_machine_image" {
+  type = string
+  description = "machine image of the web server"
+}
+
+/******************************
+  App Server Module Variables
+******************************/
+
+variable "app_server_name" {
+  type = string
+  description = "name of the app server"
+}
+variable "app_server_machine_type" {
+  type = string
+  description = "machine type of app server"
+}
+variable "app_server_zone" {
+  type = string
+  description = "zone of the app server"
+}
+variable "app_server_tag" {
+  type = string
+  description = "tags of the app server"
+}
+variable "app_server_machine_image" {
+  type = string
+  description = "machine image of the app server"
+}
+
+/*****************************
+  DB Server Module Variables
+*****************************/
+
+variable "db_server_name" {
+  type = string
+  description = "name of the db server"
+}
+variable "db_machine_type" {
+  type = string
+  description = "machine type of db server"
+}
+variable "db_server_zone" {
+  type = string
+  description = "zone of the db server"
+}
+variable "db_server_tag" {
+  type = string
+  description = "tags of the db server"
+}
+variable "db_server_machine_image" {
+  type = string
+  description = "machine image of the db server"
+}
+
+/***********************************
+  Instance Groups Module Variables
+***********************************/
+
+variable "web_instance_group_name" {
+  type = string
+  description = "name of the web instance group"
+}
+variable "web_instance_group_zone" {
+  type = string
+  description = "zone of the web instance group"
+}
+variable "app_instance_group_name" {
+  type = string
+  description = "name of the app instance group"
+}
+variable "app_instance_group_zone" {
+  type = string
+  description = "zone of the app instance group"
+}
+variable "db_instance_group_name" {
+  type = string
+  description = "name of the db instance group"
+}
+variable "db_instance_group_zone" {
+  type = string
+  description = "zone of the db instance group"
+}
+
+/*********************************
+  Load Balancer Module Variables
+*********************************/
+
+variable "web_health_check_name" {
+  type = string
+  description = "name of the health check of web server"
+}
+variable "web_backend_service_name" {
+  type = string
+  description = "name of the backend service of web server"
+}
+variable "web_backend_service_protocol" {
+  type = string
+  description = "protocol of the backend service of web sever"
+}
+variable "web_backend_service_port_name" {
+  type = string
+  description = "port name of the backend service of web server"
+}
+variable "web_url_map_name" {
+  type = string
+  description = "name of the url map of web server"
+}
+variable "web_target_proxy_name" {
+  type = string
+  description = "name of the target proxy of web server"
+}
+variable "web_forwarding_rule_name" {
+  type = string
+  description = "name of the forwarding rule for web server"
+}
+variable "web_forwarding_rule_port_range" {
+  type = string
+  description = "port range of forwarding rule for web server"
+}
+variable "web_forwarding_rule_ip_protocol" {
+  type = string
+  description = "ip protocol of forwarding rule for web server"
 }

@@ -13,7 +13,8 @@ resource "google_compute_instance" "web-server" {
   }
 
   network_interface {
-    network = var.vpc-name
+    network = google_compute_network.sample-vpc.id
+    subnetwork = google_compute_subnetwork.sample-subnet1.name
     access_config {
       
     } 
@@ -25,3 +26,4 @@ resource "google_compute_instance" "web-server" {
     service nginx start
   EOF
 }
+

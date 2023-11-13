@@ -18,7 +18,3 @@ variable "machine-image" {
   type = string
   description = "specifying image"
 }
-variable "vpc-name" {
-  type = string
-  description = "specifying vpc name"
-}

@@ -13,7 +13,8 @@ resource "google_compute_instance" "app-server" {
   }
 
   network_interface {
-    network = var.vpc-name
+    network = google_compute_network.sample-vpc.name
+    subnetwork = google_compute_subnetwork.sample-subnet2.name
   }
   metadata_startup_script = <<-EOF
     #!/bin/bash
