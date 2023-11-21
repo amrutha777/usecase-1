@@ -9,4 +9,5 @@ terraform {
 
 provider "google" {
   project     = "blissful-fiber-397508"
+  credentials = file("key.json")
 }

@@ -83,7 +83,7 @@ module "load_balancer" {
   source = "./lb"
   web-health-check-name = var.web_health_check_name
   web-backend-service-name = var.web_backend_service_name
-  web-backend-service-protocol var.web_backend_service_protocol
+  web-backend-service-protocol = var.web_backend_service_protocol
   web-backend-service-port-name = var.web_backend_service_port_name
   web-url-map-name = var.web_url_map_name
   web-target-proxy-name = var.web_target_proxy_name

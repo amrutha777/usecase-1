@@ -1,0 +1,13 @@
+{
+    "type": "service_account",
+    "project_id": "blissful-fiber-397508",
+    "private_key_id": "9ce252f04980a0d2fa78519ffc2eb03ea27eeb88",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC6CbIW65JyizM9\nxHu/Ewe7pDBBsISIh7rsNzXbDNmchNc/xY+k7inmGCzgScT1kvXot7miMDEwzAEe\n6UmxRyNK4ilIiQwbFM9k8rdQt6wt03Zewh3oquzbrhCysiA30USMSZ1+D8DAxZl7\nZbwI/vqS/A/9lKaZ50VH0e3WuvDoL/gEFWrPfBSi9fsrbjufgF6DIhQpCIE6Dnhk\nkrYLX1jVR5iLmqergFR8GJODdvFC6a31IZ6/O9/S0guyHhwriKlI0tazlmNIrT0W\nXJ6o+mOu8U1zvVdl2qgDMHc+hWyCaybX5SzKH2xfRVHHViBjZOKw4D9hQBymoU/H\nWqFxSHyhAgMBAAECggEAAfNqt6uIVJw0rVAjyvDzyTUF7AsQQ5s3KmJnHA3wAHyy\nsC9ZVYIvxO6bP04PsPZHraFrbOEiVXrIaqA0rsi0jD0UQiW0ev5M1QQ0zW3tFdqT\ndqweM0sVUiE3g4ePiO39It7UgwsQci/voof9Qh3uiqmQKs3Raeh2/DN1PXe63IMn\nqeUeiNcvp2DSzPAg/IBkmHTG6AebjDLpL1qCwKpJUigv5wJUlSNxNUEPfpKi+U4+\nOhADF92qhrw8QzPuY6mPhRjGqatc/Iq/xzB8lujsaj2musJ561LKzmHyd7znIplf\nLIkWseqsC+OAqo7zxlptBb1v5iv0YIskp+C9nLswZQKBgQDwEFQfspkl+3l6joAL\nbPDedW2kTF1S4vC+zcDaW5CmIKkrljQfxrX8PDoET64dQ2xqWrPnQQTXKvHwWXaG\n74tBr9+cof4tOg5MBOKTPfX03XlioPAG2VxlnkYmK3Dz8qd2j/u4fy6txJBoyyn9\nTYQT/hGguwQ/uV/ljq2pqY+jewKBgQDGYz6bmooXjbmWDcfoeLuz40tUhIV98xWU\noKm1Ew7Rl6R3xwx6LL/Bd+2ZEZWfBQLPTDub6d54VQPO9/g9lDezZzFFdyEuvyMy\nFfPU5koD0YSrAHvbE26zMqykGLGBrBwDEjA4AS6QcXth5GZVDRoIfnw8qZie653L\n2rs5PVvHkwKBgQDRmxA4lPJPTaEltyJp13cAZbuTxvF9G5Vko7YNcgF8a+wJmJ5u\nWEwxrkxh00iNWH9i5UtLUWPukxqn5xUsgB8w/WTbGD4cMyKkkWdbdLA6Wt5PlYG+\nGS8psuZBEZEQDwDU7qa00qdpJcWJGkrRVktKQX4WvvPYx/zJLKjJCLnX3QKBgDob\nv67cKS6U+JMXHkLdej1KijoLRv6JQPzzwkGjf2esvyPGTcVLbi9A7Xs0R1r4oMYP\nUjZs3hjo7eCliTSgQWBvDWOHbVS/75MwEud9PJi5ud5MmfqlSnt6kE7QXM3al6ne\nnfkJf5YXZ0hZGhA3cjSit8kc8/M4mFOpkcVGT6e5AoGBALIl4NTJUGAIRfM73Hln\nJhvK0qN3HosdfQ6D8s+rTl4FR3w+R/GGWQD3QQMjePrAnr8EIBUNXYXsLHmMXfS+\nyiD7hxwg4/3zuOBsgzbX2yDJRrGVoeMFnTOf446j4U9MZ6+8MN3FN5nSV9HmNsEI\nzNpVJHqWygscMWZTVSdwKWnT\n-----END PRIVATE KEY-----\n",
+    "client_email": "terraform-service-account@blissful-fiber-397508.iam.gserviceaccount.com",
+    "client_id": "102913625453723986318",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/terraform-service-account%40blissful-fiber-397508.iam.gserviceaccount.com",
+    "universe_domain": "googleapis.com"
+  }
