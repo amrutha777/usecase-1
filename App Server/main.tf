@@ -1,20 +1,24 @@
-# creating a vm for app server
+/**********
+  app vm
+**********/
 
 resource "google_compute_instance" "app-server" {
   name         = var.app-server-name
   machine_type = var.machine-type
   zone         = var.zone
-  tags = [var.app-server-tag]
+  tags         = [var.app-tag]
   boot_disk {
     initialize_params {
-      image = var.machine-image  
-      size  = 50  
+      image    = var.machine-image  
+      size     = 50  
     }
   }
-
   network_interface {
-    network = google_compute_network.sample-vpc.name
-    subnetwork = google_compute_subnetwork.sample-subnet2.name
+    network    = var.vpc-network
+    subnetwork = var.app-subnet
+    access_config {
+      
+    } 
   }
   metadata_startup_script = <<-EOF
     #!/bin/bash

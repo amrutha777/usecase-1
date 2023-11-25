@@ -1,5 +1,4 @@
 app-server-name = "app-server-vm"
-machine-type = "e2-medium"
-zone = "asia-east1-b"
-app-server-tag = "app"
-machine-image = "debian-cloud/debian-10"
+machine-type    = "e2-medium"
+zone            = "us-central1-b"
+machine-image   = "ubuntu-os-cloud/ubuntu-2004-lts"

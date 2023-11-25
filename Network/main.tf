@@ -1,11 +1,15 @@
-# creating a vpc network
+/*************
+  vpc network
+**************/
 
 resource "google_compute_network" "sample-vpc" {
   name                    = var.vpc-name
   auto_create_subnetworks = false
 }
 
-# creating a subnet for web server
+/*************
+  web subnet
+*************/
 
 resource "google_compute_subnetwork" "sample-subnet1" {
   name          = var.web-subnet-name
@@ -14,7 +18,9 @@ resource "google_compute_subnetwork" "sample-subnet1" {
   network       = google_compute_network.sample-vpc.name
 }
 
-# creating a subnet for app server
+/*************
+  app subnet
+*************/
 
 resource "google_compute_subnetwork" "sample-subnet2" {
   name          = var.app-subnet-name
@@ -23,7 +29,9 @@ resource "google_compute_subnetwork" "sample-subnet2" {
   network       = google_compute_network.sample-vpc.name
 }
 
-#creating a subnet for db
+/*************
+  db subnet
+*************/
 
 resource "google_compute_subnetwork" "sample-subnet3" {
   name          = var.db-subnet-name
@@ -32,45 +40,86 @@ resource "google_compute_subnetwork" "sample-subnet3" {
   network       = google_compute_network.sample-vpc.name
 }
 
-# creating a firewall for web server
+/***************
+  web firewall
+***************/
 
 resource "google_compute_firewall" "web-firewall" {
-  name    = var.web-firewall-name
-  network =  google_compute_network.sample-vpc.name
-  target_tags   = [var.web-firewall-tag] 
+  name          = var.web-firewall-name
+  network       =  google_compute_network.sample-vpc.name
+  target_tags   = [var.web-tag] 
   source_ranges = ["0.0.0.0/0"] 
-
   allow {
-    protocol = "all"
-  } 
-
+    protocol    = "tcp"
+    ports       = ["22","80"]
+  }
+  allow {
+    protocol    = "icmp"
+  }
 }
 
-# creating a firewall for app server
+/***************
+  app firewall
+***************/
 
 resource "google_compute_firewall" "app-firewall" {
   name        = var.app-firewall-name
   network     = google_compute_network.sample-vpc.name
-  source_tags = [var.web-firewall-tag]
-  target_tags = [var.app-firewall-tag] 
-
-  deny {
-    protocol = "all"
+  source_tags = [var.web-tag]
+  target_tags = [var.app-tag] 
+  allow {
+  protocol    = "tcp" 
+  ports       = ["22","80"]
+  } 
+  allow {
+    protocol  = "icmp"
   }
-
 }
 
-# creating a firewall for db server
+/***************
+  db firewall
+***************/
 
 resource "google_compute_firewall" "db-firewall" {
   name        = var.db-firewall-name
   network     = google_compute_network.sample-vpc.name
-  source_tags = [var.app-firewall-tag]
-  target_tags = [var.db-firewall-tag]  
-
-  deny {
-    protocol = "all"
+  source_tags = [var.app-tag]
+  target_tags = [var.db-tag]  
+  allow {
+  protocol    = "tcp" 
+  ports       = ["22","80","3306"]
+  } 
+  allow {
+    protocol  = "icmp"
   }
-
 }
-  
+
+/***************
+  SSH firewall
+***************/ 
+
+resource "google_compute_firewall" "ssh-firewall" {
+  name          = var.ssh-firewall-name
+  network       = google_compute_network.sample-vpc.name
+  source_ranges = ["35.235.240.0/20"]
+  target_tags   = [var.app-tag,var.db-tag]
+  allow {
+  protocol      = "tcp" 
+  ports         = ["22"]
+ }
+}
+
+/***********************
+  health check firewall
+************************/
+
+resource "google_compute_firewall" "hc-firewall" {
+  name          = var.hc-firewall-name
+  network       = google_compute_network.sample-vpc.name
+  source_ranges = ["35.191.0.0/16","130.211.0.0/22"]
+  target_tags   = [var.app-tag]
+  allow {
+  protocol      = "tcp" 
+  ports         = ["80"]
+ }
+}

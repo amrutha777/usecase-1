@@ -66,6 +66,14 @@ variable "db_firewall_tag" {
   type = string
   description = "tag for the db server"
 }
+variable "ssh_firewall_name" {
+  type = string
+  description = "name of ssh firewall"
+}
+variable "hc_firewall_name" {
+  type = string
+  description = "name of health check firewall"
+}
 
 /*******************************
    Web Server Module Variables
@@ -82,10 +90,6 @@ variable "web_server_machine_type" {
 variable "web_server_zone" {
   type = string
   description = "zone of the web server"
-}
-variable "web_server_tag" {
-  type = string
-  description = "tags of the web server"
 }
 variable "web_server_machine_image" {
   type = string
@@ -133,10 +137,6 @@ variable "db_server_zone" {
   type = string
   description = "zone of the db server"
 }
-variable "db_server_tag" {
-  type = string
-  description = "tags of the db server"
-}
 variable "db_server_machine_image" {
   type = string
   description = "machine image of the db server"
@@ -154,21 +154,13 @@ variable "web_instance_group_zone" {
   type = string
   description = "zone of the web instance group"
 }
-variable "app_instance_group_name" {
+variable "web_to_app_instance_group_name" {
   type = string
   description = "name of the app instance group"
 }
-variable "app_instance_group_zone" {
+variable "web_to_app_instance_group_zone" {
   type = string
   description = "zone of the app instance group"
-}
-variable "db_instance_group_name" {
-  type = string
-  description = "name of the db instance group"
-}
-variable "db_instance_group_zone" {
-  type = string
-  description = "zone of the db instance group"
 }
 
 /*********************************
@@ -207,7 +199,35 @@ variable "web_forwarding_rule_port_range" {
   type = string
   description = "port range of forwarding rule for web server"
 }
-variable "web_forwarding_rule_ip_protocol" {
+variable "web_to_app_health_check_name" {
   type = string
-  description = "ip protocol of forwarding rule for web server"
+  description = "name of web to app health check name"
+}
+variable "web_to_app_health_check_region" {
+  type = string
+  description = "region of web to app health check region"
+}
+variable "web_to_app_backend_service_name" {
+  type = string
+  description = "name of web to app backend service"
+}
+variable "web_to_app_backend_service_region" {
+  type = string
+  description = "region of web to app backend service"
+}
+variable "web_to_app_backend_service_protocol" {
+  type = string
+  description = "protocol of web to app backend service"
+}
+variable "web_to_app_forwarding_rule_name" {
+  type = string
+  description = "name of web to app forwarding rule"
+}
+variable "web_to_app_forwarding_rule_region" {
+  type = string
+  description = "region of web to app forwarding rule"
+}
+variable "web_to_app_forwarding_rule_load_balancing_scheme" {
+  type = string
+  description = "load balancing scheme of web to app forwarding rule"
 }

@@ -1,3 +1,3 @@
-output "vpc-name" {
-    value = google_compute_network.main.name
+output "web_server" {
+  value = google_compute_instance.web-server.self_link
 }

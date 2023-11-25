@@ -1,20 +1,21 @@
-# creating a vm for web server
+/**********
+  app vm
+**********/
 
 resource "google_compute_instance" "web-server" {
   name         = var.web-server-name
   machine_type = var.machine-type
   zone         = var.zone
-  tags = [var.web-server-tag]
+  tags         = [var.web-tag]
   boot_disk {
     initialize_params {
-      image = var.machine-image  
-      size  = 50  
+      image    = var.machine-image  
+      size     = 50  
     }
   }
-
   network_interface {
-    network = google_compute_network.sample-vpc.id
-    subnetwork = google_compute_subnetwork.sample-subnet1.name
+    network    = var.vpc-network
+    subnetwork = var.web-subnet
     access_config {
       
     } 

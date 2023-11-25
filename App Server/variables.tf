@@ -10,11 +10,19 @@ variable "zone" {
   type = string
   description = "specifying zone"
 }
-variable "app-server-tag" {
+variable "app-tag" {
   type = string
   description = "specifying tags for app server"
 }
 variable "machine-image" {
   type = string
   description = "specifying image"
+}
+variable "vpc-network" {
+  type = string
+  description = "name of the vpc"
+}
+variable "app-subnet" {
+  type = string
+  description = "name of the app subnet"
 }

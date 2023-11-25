@@ -1,29 +1,48 @@
 # mysql installation in vm 
-https://www.digitalocean.com/community/tutorials/how-to-install-the-latest-mysql-on-debian-10
+# https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04
+# https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql
+# https://www.digitalocean.com/community/tutorials/how-to-install-the-latest-mysql-on-debian-10
 
-#Step 1 — Adding the MySQL Software Repository
+# updating VM
+    1  sudo apt update
 
-sudo apt update
-sudo apt install gnupg
-cd /tmp
-wget https://dev.mysql.com/get/mysql-apt-config_0.8.22-1_all.deb
-sudo dpkg -i mysql-apt-config*
-sudo apt update
+# installing mysql in vm 
+    2  sudo apt install mysql-server
 
+# starting mysql in my vm
+    3  sudo systemctl start mysql.service
 
-#Step 2 — Installing MySQL
+# checking status of mysql
+    4  systemctl status mysql.service
 
-sudo apt install mysql-server -y
-sudo systemctl status mysql
+# entering into mysql
+    5 sudo mysql
 
+# creating user in mysql
+    6 CREATE USER 'amulu'@'localhost' IDENTIFIED BY 'Amulu777@';
 
-#Step 3 — Securing MySQL
+# adding privilages to the user
+    7 GRANT ALL PRIVILEGES ON *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
 
-mysql_secure_installation
+# going back to vm
+    7 exit
 
+# checking version
+    8 sudo mysqladmin -p -u amulu version
 
-#Step 4 – Testing MySQL
+# entering into mysql with created user
+    7 mysql -u amulu -p
 
-mysqladmin -u root -p version
+# now creating database
+    8 CREATE DATABASE test;
+
+# changing into database created
+    9 USE test;
+
+# creating table in the database
+    10 CREATE TABLE employee_details (id INT AUTO_INCREMENT PRIMARY KEY,emp_name VARCHAR(20),emp_email VARCHAR(50));
+
+# displaying my table
+    11 DESC employee_details;
 
 

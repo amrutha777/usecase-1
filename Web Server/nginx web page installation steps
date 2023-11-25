@@ -1,0 +1,30 @@
+# In ssh checking the status of the nginx
+1 sudo systemctl status nginx
+
+# Navigate to Nginx Web Root
+2 cd /var/www/html/
+
+# Create or Upload HTML File:
+3.sudo nano index.html
+
+# Configure Nginx:
+4.sudo nano /etc/nginx/sites-available/default
+
+# Look for the server block and ensure that the root directive points to the correct web root directory. For example:
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    root /var/www/html;
+    index index.html index.htm;
+
+    # Other configuration settings...
+}
+
+# Restart Nginx:
+5.sudo systemctl restart nginx
+
+# Access the HTML Page:
+6.http://[YOUR_VM_IP]
+
+
