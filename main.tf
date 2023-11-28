@@ -29,7 +29,7 @@ module "Network" {
 **********************/
 
 module "Web_Server" {
-  source          = "./Web Server"
+  source          = "./WebServer"
   web-server-name = var.web_server_name
   machine-type    = var.web_server_machine_type
   zone            = var.web_server_zone
@@ -43,8 +43,8 @@ module "Web_Server" {
   App Server Module
 ********************/
 
-module "app_server" {
-  source          = "./App Server"
+module "App_Server" {
+  source          = "./AppServer"
   app-server-name = var.app_server_name
   machine-type    = var.app_server_machine_type
   zone            = var.app_server_zone
@@ -58,8 +58,8 @@ module "app_server" {
   DB Server Module
 *********************/
 
-module "db-server" {
-  source         = "./db Server"
+module "Db-Server" {
+  source         = "./DbServer"
   db-server-name = var.db_server_name
   machine-type   = var.db_machine_type
   zone           = var.db_server_zone
@@ -73,27 +73,27 @@ module "db-server" {
   Instance Groups Module
 *************************/
 
-module "instance_groups" {
-  source                         = "./Instance groups"
+module "Instance_Groups" {
+  source                         = "./InstanceGroups"
   web-instance-group-name        = var.web_instance_group_name
   web-instance-group-zone        = var.web_instance_group_zone
   web-server                     = module.Web_Server.web_server
   web-to-app-instance-group-name = var.web_to_app_instance_group_name
   web-to-app-instance-group-zone = var.web_to_app_instance_group_zone
-  app-server                     = module.app_server.app_server
+  app-server                     = module.App_Server.app_server
 }
 
 /***********************
   Load Balancer Module
 ***********************/
 
-module "load_balancer" {
-  source                                           = "./lb"
+module "Load_Balancer" {
+  source                                           = "./LoadBalancer"
   web-health-check-name                            = var.web_health_check_name
   web-backend-service-name                         = var.web_backend_service_name
   web-backend-service-protocol                     = var.web_backend_service_protocol
   web-backend-service-port-name                    = var.web_backend_service_port_name
-  web-instance-group                               = module.instance_groups.web_instance_group
+  web-instance-group                               = module.Instance_Groups.web_instance_group
   web-url-map-name                                 = var.web_url_map_name
   web-target-proxy-name                            = var.web_target_proxy_name
   web-forwarding-rule-name                         = var.web_forwarding_rule_name
@@ -103,7 +103,7 @@ module "load_balancer" {
   web-to-app-backend-service-name                  = var.web_to_app_backend_service_name
   web-to-app-backend-service-region                = var.web_to_app_backend_service_region
   web-to-app-backend-service-protocol              = var.web_to_app_backend_service_protocol
-  app-instance-group                               = module.instance_groups.app_instance_group
+  app-instance-group                               = module.Instance_Groups.app_instance_group
   web-to-app-forwarding-rule-name                  = var.web_to_app_forwarding_rule_name
   web-to-app-forwarding-rule-region                = var.web_to_app_forwarding_rule_region
   web-to-app-forwarding-rule-load-balancing-scheme = var.web_to_app_forwarding_rule_load_balancing_scheme
