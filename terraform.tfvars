@@ -12,13 +12,14 @@ db_subnet_name        = "db-subnet"
 ip_range_for_db       = "10.4.0.0/16"
 subnet_region_for_db  = "asia-east2"
 web_firewall_name     = "web-firewall"
-web_tag               = "web"
+web_tag               = ["web"]
 app_firewall_name     = "app-firewall"
-app_tag               = "app"
+app_tag               = ["app"]
 db_firewall_name      = "db-firewall"
-db_tag                = "db"
+db_tag                = ["db"]
 ssh_firewall_name     = "ssh-firewall"
 hc_firewall_name      = "hc-firewall"
+target_tags           = ["app","db"]
 
 /*******************************
    Web Server Module Variables 

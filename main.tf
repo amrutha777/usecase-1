@@ -22,6 +22,7 @@ module "Network" {
   db-tag                = var.db_tag
   ssh-firewall-name     = var.ssh_firewall_name
   hc-firewall-name      = var.hc_firewall_name
+  target-tags           = var.target_tags
 }
 
 /**********************

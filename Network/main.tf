@@ -47,7 +47,7 @@ resource "google_compute_subnetwork" "sample-subnet3" {
 resource "google_compute_firewall" "web-firewall" {
   name          = var.web-firewall-name
   network       =  google_compute_network.sample-vpc.name
-  target_tags   = [var.web-tag] 
+  target_tags   = var.web-tag
   source_ranges = ["0.0.0.0/0"] 
   allow {
     protocol    = "tcp"
@@ -65,8 +65,8 @@ resource "google_compute_firewall" "web-firewall" {
 resource "google_compute_firewall" "app-firewall" {
   name        = var.app-firewall-name
   network     = google_compute_network.sample-vpc.name
-  source_tags = [var.web-tag]
-  target_tags = [var.app-tag] 
+  source_tags = var.web-tag
+  target_tags = var.app-tag
   allow {
   protocol    = "tcp" 
   ports       = ["22","80"]
@@ -83,8 +83,8 @@ resource "google_compute_firewall" "app-firewall" {
 resource "google_compute_firewall" "db-firewall" {
   name        = var.db-firewall-name
   network     = google_compute_network.sample-vpc.name
-  source_tags = [var.app-tag]
-  target_tags = [var.db-tag]  
+  source_tags = var.app-tag
+  target_tags = var.db-tag  
   allow {
   protocol    = "tcp" 
   ports       = ["22","80","3306"]
@@ -102,7 +102,7 @@ resource "google_compute_firewall" "ssh-firewall" {
   name          = var.ssh-firewall-name
   network       = google_compute_network.sample-vpc.name
   source_ranges = ["35.235.240.0/20"]
-  target_tags   = [var.app-tag,var.db-tag]
+  target_tags   = var.target-tags
   allow {
   protocol      = "tcp" 
   ports         = ["22"]
