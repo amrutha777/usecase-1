@@ -46,22 +46,13 @@ variable "web_firewall_name" {
   type = string
   description = "name of the firewall for web server"
 }
-variable "web_tag" {
-  description = "tag for the web server"
-}
 variable "app_firewall_name" {
   type = string
   description = "name of the firewall for app server"
 }
-variable "app_tag" {
-  description = "tag for the app server"
-}
 variable "db_firewall_name" {
   type = string
   description = "name of the firewall for db server"
-}
-variable "db_tag" {
-  description = "tag for the db server"
 }
 variable "ssh_firewall_name" {
   type = string
@@ -70,9 +61,6 @@ variable "ssh_firewall_name" {
 variable "hc_firewall_name" {
   type = string
   description = "name of health check firewall"
-}
-variable "target_tags" {
-  
 }
 
 /*******************************

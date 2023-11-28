@@ -10,10 +10,6 @@ variable "zone" {
   type = string
   description = "specifying zone"
 }
-variable "db-tag" {
-  type = string
-  description = "specify tags for db server"
-}
 variable "machine-image" {
   type = string
   description = "specify images"

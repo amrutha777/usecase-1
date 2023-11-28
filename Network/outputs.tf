@@ -10,12 +10,3 @@ output "app_subnet" {
 output "db_subnet" {
   value = google_compute_subnetwork.sample-subnet3.name
 }
-output "web_tag" {
-  value = google_compute_firewall.web-firewall.target_tags
-}
-output "app_tag" {
-  value = google_compute_firewall.app-firewall.target_tags
-}
-output "db_tag" {
-  value = google_compute_firewall.db-firewall.target_tags
-}

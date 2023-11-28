@@ -15,14 +15,10 @@ module "Network" {
   ip-range-for-db       = var.ip_range_for_db
   subnet-region-for-db  = var.subnet_region_for_db
   web-firewall-name     = var.web_firewall_name
-  web-tag               = var.web_tag
   app-firewall-name     = var.app_firewall_name
-  app-tag               = var.app_tag
   db-firewall-name      = var.db_firewall_name
-  db-tag                = var.db_tag
   ssh-firewall-name     = var.ssh_firewall_name
   hc-firewall-name      = var.hc_firewall_name
-  target-tags           = var.target_tags
 }
 
 /**********************
@@ -34,7 +30,6 @@ module "Web_Server" {
   web-server-name = var.web_server_name
   machine-type    = var.web_server_machine_type
   zone            = var.web_server_zone
-  web-tag         = module.Network.web_tag
   machine-image   = var.web_server_machine_image 
   vpc-network     = module.Network.vpc_name
   web-subnet      = module.Network.web_subnet
@@ -49,7 +44,6 @@ module "App_Server" {
   app-server-name = var.app_server_name
   machine-type    = var.app_server_machine_type
   zone            = var.app_server_zone
-  app-tag         = module.Network.app_tag
   machine-image   = var.app_server_machine_image
   vpc-network     = module.Network.vpc_name
   app-subnet      = module.Network.app_subnet 
@@ -64,7 +58,6 @@ module "Db-Server" {
   db-server-name = var.db_server_name
   machine-type   = var.db_machine_type
   zone           = var.db_server_zone
-  db-tag         = module.Network.db_tag
   machine-image  = var.db_server_machine_image 
   vpc-network    = module.Network.vpc_name
   db-subnet      = module.Network.db_subnet

@@ -42,29 +42,17 @@ variable "web-firewall-name" {
   type = string
   description = "firewall name for web server"
 }
-variable "web-tag" {
-  description = "tag for web server"
-}
 variable "app-firewall-name" {
   type = string
   description = "firewall name for app server"
-}
-variable "app-tag" {
-  description = "tag for app server"
 }
 variable "db-firewall-name" {
   type = string
   description = "firewall name for db server"
 }
-variable "db-tag" {
-  description = "tag for db server"
-}
 variable "ssh-firewall-name" {
   type = string
   description = "firewall for ssh"
-}
-variable "target-tags" {
-  
 }
 variable "hc-firewall-name" {
   type = string

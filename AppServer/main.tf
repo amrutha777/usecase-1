@@ -6,7 +6,7 @@ resource "google_compute_instance" "app-server" {
   name         = var.app-server-name
   machine_type = var.machine-type
   zone         = var.zone
-  tags         = [var.app-tag]
+  tags         = ["app"]
   boot_disk {
     initialize_params {
       image    = var.machine-image  
