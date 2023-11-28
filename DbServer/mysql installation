@@ -22,7 +22,7 @@
     6 CREATE USER 'amulu'@'localhost' IDENTIFIED BY 'Amulu777@';
 
 # adding privilages to the user
-    7 GRANT ALL PRIVILEGES ON *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
+    7 GRANT ALL PRIVILEGES ON *.* TO 'amulu'@'localhost' WITH GRANT OPTION;
 
 # going back to vm
     7 exit
