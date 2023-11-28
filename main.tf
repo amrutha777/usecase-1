@@ -15,11 +15,11 @@ module "Network" {
   ip-range-for-db       = var.ip_range_for_db
   subnet-region-for-db  = var.subnet_region_for_db
   web-firewall-name     = var.web_firewall_name
-  web-tag               = var.web_firewall_tag
+  web-tag               = var.web_tag
   app-firewall-name     = var.app_firewall_name
-  app-tag               = var.app_firewall_tag
+  app-tag               = var.app_tag
   db-firewall-name      = var.db_firewall_name
-  db-tag                = var.db_firewall_tag
+  db-tag                = var.db_tag
   ssh-firewall-name     = var.ssh_firewall_name
   hc-firewall-name      = var.hc_firewall_name
 }

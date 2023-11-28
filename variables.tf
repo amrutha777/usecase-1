@@ -46,7 +46,7 @@ variable "web_firewall_name" {
   type = string
   description = "name of the firewall for web server"
 }
-variable "web_firewall_tag" {
+variable "web_tag" {
   type = string
   description = "tag for the web server"
 }
@@ -54,7 +54,7 @@ variable "app_firewall_name" {
   type = string
   description = "name of the firewall for app server"
 }
-variable "app_firewall_tag" {
+variable "app_tag" {
   type = string
   description = "tag for the app server"
 }
@@ -62,7 +62,7 @@ variable "db_firewall_name" {
   type = string
   description = "name of the firewall for db server"
 }
-variable "db_firewall_tag" {
+variable "db_tag" {
   type = string
   description = "tag for the db server"
 }
@@ -112,7 +112,7 @@ variable "app_server_zone" {
   type = string
   description = "zone of the app server"
 }
-variable "app_server_tag" {
+variable "app_tag" {
   type = string
   description = "tags of the app server"
 }
