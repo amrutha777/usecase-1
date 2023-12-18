@@ -1,4 +1,3 @@
-[08/12 19:11] Shaankari Voruganti
 pipeline {​​​​​
 
     agent any
@@ -9,7 +8,7 @@ pipeline {​​​​​
 
       steps{​​​​​
 
-        checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: '']])
+        checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/amrutha777/Use-Case-1.git']])
 
       }​​​​​
 
