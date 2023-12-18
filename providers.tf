@@ -8,6 +8,6 @@ terraform {
 }
 
 provider "google" {
-  project     = "blissful-fiber-397508"
+  project     = "speedy-district-406504"
   credentials = file("key.json")
 }
