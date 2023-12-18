@@ -8,7 +8,7 @@ pipeline {​​​​​
 
       steps{​​​​​
 
-        checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/amrutha777/Use-Case-1.git']])
+        checkout scmGit(branches: [[name: '*/test']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/amrutha777/Use-Case-1.git']])
 
       }​​​​​
 
