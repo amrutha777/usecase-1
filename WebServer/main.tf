@@ -20,11 +20,5 @@ resource "google_compute_instance" "web-server" {
       
     } 
   }
-  metadata_startup_script = <<-EOF
-    #!/bin/bash
-    apt-get update
-    apt-get install -y nginx
-    service nginx start
-  EOF
 }
 
