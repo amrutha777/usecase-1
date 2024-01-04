@@ -32,13 +32,13 @@ pipeline {
             }
         }
 
-        /*stage('Terraform Apply') {
+        stage('Terraform Apply') {
             steps {
                 script {
                     sh 'terraform apply -auto-approve'
                 }
             }
-        }*/
+        }
         stage('Terraform Destroy') {
             steps {
                 script {
