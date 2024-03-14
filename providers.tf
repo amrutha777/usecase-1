@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "google" {
-  project     = "speedy-district-406504"
+  project     = "amrutha-k"
   credentials = file("key.json")
 }
 
