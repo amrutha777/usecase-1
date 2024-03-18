@@ -63,7 +63,7 @@ resource "google_compute_firewall" "web-firewall" {
 /***************
   app firewall
 ***************/
-
+/*
 resource "google_compute_firewall" "app-firewall" {
   name        = var.app-firewall-name
   network     = google_compute_network.sample-vpc.name
@@ -77,11 +77,11 @@ resource "google_compute_firewall" "app-firewall" {
     protocol  = "icmp"
   }
 }
-
+*/
 /***************
   db firewall
 ***************/
-
+/*
 resource "google_compute_firewall" "db-firewall" {
   name        = var.db-firewall-name
   network     = google_compute_network.sample-vpc.name
@@ -95,11 +95,11 @@ resource "google_compute_firewall" "db-firewall" {
     protocol  = "icmp"
   }
 }
-
+*/
 /***************
   SSH firewall
 ***************/ 
-
+/*
 resource "google_compute_firewall" "ssh-firewall" {
   name          = var.ssh-firewall-name
   network       = google_compute_network.sample-vpc.name
@@ -110,11 +110,11 @@ resource "google_compute_firewall" "ssh-firewall" {
   ports         = ["22"]
  }
 }
-
+*/
 /***********************
   health check firewall
 ************************/
-
+/*
 resource "google_compute_firewall" "hc-firewall" {
   name          = var.hc-firewall-name
   network       = google_compute_network.sample-vpc.name
@@ -125,8 +125,8 @@ resource "google_compute_firewall" "hc-firewall" {
   ports         = ["80"]
  }
 }
-
 */
+
 /********************
    3-Tier Firewall
 *********************/
