@@ -40,11 +40,11 @@ resource "google_compute_subnetwork" "sample-subnet3" {
   network       = google_compute_network.sample-vpc.name
 }
 
-/*
+
 /***************
   web firewall
 ***************/
-
+/*
 resource "google_compute_firewall" "web-firewall" {
   name          = var.web-firewall-name
   network       =  google_compute_network.sample-vpc.name
@@ -58,6 +58,7 @@ resource "google_compute_firewall" "web-firewall" {
     protocol    = "icmp"
   }
 }
+*/
 
 /***************
   app firewall
