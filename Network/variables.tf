@@ -42,25 +42,3 @@ variable "allow-all-firewall-name" {
   type = string
   description = "allow all firewall name"
 }
-/*
-variable "web-firewall-name" {
-  type = string
-  description = "firewall name for web server"
-}
-variable "app-firewall-name" {
-  type = string
-  description = "firewall name for app server"
-}
-variable "db-firewall-name" {
-  type = string
-  description = "firewall name for db server"
-}
-variable "ssh-firewall-name" {
-  type = string
-  description = "firewall for ssh"
-}
-variable "hc-firewall-name" {
-  type = string
-  description = "firewall for health check"
-}
-*/
