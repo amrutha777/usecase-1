@@ -42,6 +42,11 @@ variable "subnet_region_for_db" {
   type = string
   description = "region of the db server"
 }
+variable "allow_all_firewall_name" {
+   type = string
+   description = "allow all firewall name"
+}
+/*
 variable "web_firewall_name" {
   type = string
   description = "name of the firewall for web server"
@@ -62,6 +67,7 @@ variable "hc_firewall_name" {
   type = string
   description = "name of health check firewall"
 }
+*/
 
 /*******************************
    Web Server Module Variables
