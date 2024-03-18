@@ -40,6 +40,7 @@ resource "google_compute_subnetwork" "sample-subnet3" {
   network       = google_compute_network.sample-vpc.name
 }
 
+/*
 /***************
   web firewall
 ***************/
@@ -122,4 +123,20 @@ resource "google_compute_firewall" "hc-firewall" {
   protocol      = "tcp" 
   ports         = ["80"]
  }
+}
+*/
+
+/********************
+   3-Tier Firewall
+*********************/
+
+resource "google_compute_firewall" "allow-all-firewall" {
+  name    = var.allow-all-firewall-name
+  network = google_compute_network.sample-vpc.name
+
+  allow {
+    protocol = "all"
+  }
+
+  source_ranges = ["0.0.0.0/0"]
 }
