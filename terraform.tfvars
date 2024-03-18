@@ -1,21 +1,24 @@
 /*****************
   Network Module
 *****************/
-vpc_name              = "vpc-for-3tier"
-web_subnet_name       = "web-subnet"
-ip_range_for_web      = "10.2.0.0/16"
-subnet_region_for_web = "us-central1"
-app_subnet_name       = "app-subnet"
-ip-range_for_app      = "10.3.0.0/16"
-subnet_region_for_app = "us-central1"
-db_subnet_name        = "db-subnet"
-ip_range_for_db       = "10.4.0.0/16"
-subnet_region_for_db  = "us-central1"
+vpc_name                = "vpc-for-3tier"
+web_subnet_name         = "web-subnet"
+ip_range_for_web        = "10.2.0.0/16"
+subnet_region_for_web   = "us-central1"
+app_subnet_name         = "app-subnet"
+ip-range_for_app        = "10.3.0.0/16"
+subnet_region_for_app   = "us-central1"
+db_subnet_name          = "db-subnet"
+ip_range_for_db         = "10.4.0.0/16"
+subnet_region_for_db    = "us-central1"
+allow-all-firewall-name = "allow-all-firewall"
+/*
 web_firewall_name     = "web-firewall"
 app_firewall_name     = "app-firewall"
 db_firewall_name      = "db-firewall"
 ssh_firewall_name     = "ssh-firewall"
 hc_firewall_name      = "hc-firewall"
+*/
 
 /*******************************
    Web Server Module Variables 
