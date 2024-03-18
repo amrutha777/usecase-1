@@ -11,7 +11,7 @@ subnet_region_for_app   = "us-central1"
 db_subnet_name          = "db-subnet"
 ip_range_for_db         = "10.4.0.0/16"
 subnet_region_for_db    = "us-central1"
-allow-all-firewall-name = "allow-all-firewall"
+allow_all_firewall_name = "allow-all-firewall"
 /*
 web_firewall_name     = "web-firewall"
 app_firewall_name     = "app-firewall"
