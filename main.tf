@@ -15,11 +15,6 @@ module "Network" {
   ip-range-for-db         = var.ip_range_for_db
   subnet-region-for-db    = var.subnet_region_for_db
   allow-all-firewall-name = var.allow_all_firewall_name
- /* web-firewall-name     = var.web_firewall_name
-  app-firewall-name       = var.app_firewall_name
-  db-firewall-name        = var.db_firewall_name
-  ssh-firewall-name       = var.ssh_firewall_name
-  hc-firewall-name        = var.hc_firewall_name */
 }
 
 /**********************
