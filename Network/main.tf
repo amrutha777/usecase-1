@@ -124,8 +124,8 @@ resource "google_compute_firewall" "hc-firewall" {
   ports         = ["80"]
  }
 }
-*/
 
+*/
 /********************
    3-Tier Firewall
 *********************/
