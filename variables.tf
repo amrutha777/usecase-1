@@ -46,28 +46,6 @@ variable "allow_all_firewall_name" {
    type = string
    description = "allow all firewall name"
 }
-/*
-variable "web_firewall_name" {
-  type = string
-  description = "name of the firewall for web server"
-}
-variable "app_firewall_name" {
-  type = string
-  description = "name of the firewall for app server"
-}
-variable "db_firewall_name" {
-  type = string
-  description = "name of the firewall for db server"
-}
-variable "ssh_firewall_name" {
-  type = string
-  description = "name of ssh firewall"
-}
-variable "hc_firewall_name" {
-  type = string
-  description = "name of health check firewall"
-}
-*/
 
 /*******************************
    Web Server Module Variables
