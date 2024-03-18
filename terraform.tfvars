@@ -12,13 +12,6 @@ db_subnet_name          = "db-subnet"
 ip_range_for_db         = "10.4.0.0/16"
 subnet_region_for_db    = "us-central1"
 allow_all_firewall_name = "allow-all-firewall"
-/*
-web_firewall_name     = "web-firewall"
-app_firewall_name     = "app-firewall"
-db_firewall_name      = "db-firewall"
-ssh_firewall_name     = "ssh-firewall"
-hc_firewall_name      = "hc-firewall"
-*/
 
 /*******************************
    Web Server Module Variables 
