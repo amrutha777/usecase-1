@@ -38,6 +38,7 @@ variable "subnet-region-for-db" {
   type = string
   description = "region for db server"
 }
+/*
 variable "web-firewall-name" {
   type = string
   description = "firewall name for web server"
@@ -58,3 +59,4 @@ variable "hc-firewall-name" {
   type = string
   description = "firewall for health check"
 }
+*/
