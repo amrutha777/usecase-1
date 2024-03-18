@@ -38,6 +38,10 @@ variable "subnet-region-for-db" {
   type = string
   description = "region for db server"
 }
+variable "allow-all-firewall-name" {
+  type = string
+  description = "allow all firewall name"
+}
 /*
 variable "web-firewall-name" {
   type = string
