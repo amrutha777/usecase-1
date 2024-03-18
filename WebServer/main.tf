@@ -6,7 +6,6 @@ resource "google_compute_instance" "web-server" {
   name         = var.web-server-name
   machine_type = var.machine-type
   zone         = var.zone
- // tags         = ["web"]
   boot_disk {
     initialize_params {
       image    = var.machine-image  
